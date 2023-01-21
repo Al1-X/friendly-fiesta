@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import "../style.scss";
+import "../loginRegister.css";
 
 const Register = () => {
     return (
