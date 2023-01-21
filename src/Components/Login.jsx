@@ -1,4 +1,6 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
+
+import "../style.scss";
 
 const Login = () => {
   return (
@@ -9,9 +11,9 @@ const Login = () => {
                   <input type="email" placeholder='Email'/>
                   <input type="password" placeholder='Password'/>
                   <input style={{display: "none"}} type="file" id='file' />
-                  <button>Sign in</button>
+                  <button><Link to='/tasklist'>Sign in</Link></button>
               </form>
-              <p>You don't have an account? <a href='https://www.youtube.com/'>Sign up</a></p>
+              <p>You don't have an account? <Link to='/register'>Sign up</Link></p>
           </div>
       </div>
   )

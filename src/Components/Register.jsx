@@ -1,4 +1,6 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
+
+import "../style.scss";
 
 const Register = () => {
     return (
@@ -14,7 +16,7 @@ const Register = () => {
                   <input style={{display: "none"}} type="file" id='file' />
                   <button>Sign up</button>
               </form>
-              <p>You already have an account? Login</p>
+              <p>You already have an account? <Link to="/login">Login</Link></p>
           </div>
       </div>
     )
