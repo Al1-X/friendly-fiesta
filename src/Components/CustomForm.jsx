@@ -1,7 +1,7 @@
 import { PlusIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react';
 
-export const CustomForm = ({ addTask }) => {
+const CustomForm = ({ addTask }) => {
     const [task, setTask] = useState("");
 
     const handleFormSubmit = (e) => {
