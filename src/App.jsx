@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import useLocalStorage from "./hooks/useLocalStorage"
+
 import CustomForm from "./Components/CustomForm";
 import EditForm from "./Components/EditForm";
 import TaskList from "./Components/TaskList";
@@ -12,7 +14,8 @@ import "./loginRegister.css"
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useLocalStorage('react-todo.tasks', []);
+  const [previousFocusEl, setPreviousFocusEl] = useState(null);
   const [editedTask, setEditedTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -43,12 +46,13 @@ function App() {
 
   const closeEditMode = () => {
     setIsEditing(false);
-    // previous state focus
+    previousFocusEl.focus();
   }
   
   const enterEditMode = (task) => {
     setEditedTask(task);
     setIsEditing(true);
+    setPreviousFocusEl(document.activeElement);
   }
 
   return (
@@ -76,6 +80,7 @@ function App() {
                 <EditForm
                   editedTask={editedTask}
                   updateTask={updateTask}
+                  closeEditMode={closeEditMode}
                 />
               )
             }
