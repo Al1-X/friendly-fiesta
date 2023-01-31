@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import useLocalStorage from "./hooks/useLocalStorage"
+import useLocalStorage from "./Hooks/useLocalStorage"
 
 import CustomForm from "./Components/CustomForm";
 import EditForm from "./Components/EditForm";
@@ -9,7 +9,7 @@ import Login from "./Components/Login";
 import Register from "./Components/Register";
 
 import "./App.css";
-import "./loginRegister.css"
+import "./Components/loginRegister.css"
 
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 

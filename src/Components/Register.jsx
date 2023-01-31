@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import "../loginRegister.css";
+import "./loginRegister.css";
 
 const Register = () => {
     return (
